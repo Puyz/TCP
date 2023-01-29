@@ -5,7 +5,7 @@ import time
 import pyautogui
 import pyperclip
 
-host = "10.192.118.160"
+host = "<IP>"
 port = 1250
 while 1:
     try:
