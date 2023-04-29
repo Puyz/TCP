@@ -3,5 +3,5 @@
 ## FEATURES
 - Command Line
 - File Transfer
-- Windows Clipboard
+- Clipboard
 - Screenshot
